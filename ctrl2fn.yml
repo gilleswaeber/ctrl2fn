@@ -1,0 +1,4 @@
+- JOB: intercept -g $DEVNODE | ctrl2fn | uinput -d $DEVNODE
+  DEVICE:
+      EVENTS:
+          EV_KEY: [KEY_RIGHTCTRL, KEY_LEFT, KEY_RIGHT, KEY_UP, KEY_DOWN]

@@ -13,10 +13,10 @@ This only changes the behavior of the arrow keys when pressed to simulate a <kbd
 Some keyboards seem not to register both <kbd>Ctrl</kbd> keys when pressed simultaneously.
 This is a hardware problem.
 
-## Dependencies
-It depends on the [Interception Tools](https://gitlab.com/interception/linux/tools) but can be used on any Linux+X11/Wayland.
+## Installation
+This depends on the [Interception Tools](https://gitlab.com/interception/linux/tools) and can be used on any Linux with Wayland, X11 or in the terminal.
 
-## Building
+Build:
 ```sh
 git clone git@github.com:gilleswaeber/ctrl2fn.git
 cd ctrl2fn
@@ -30,8 +30,8 @@ sudo cmake --install build
 ```
 
 ## Execution
-**ctrl2fn** is an [Interception Tools](https://gitlab.com/interception/linux/tools) plugin. A suggested
-`udevmon` job configuration is:
+**ctrl2fn** is an [Interception Tools](https://gitlab.com/interception/linux/tools) plugin.
+A suggested `udevmon` job configuration is:
 
 ```yaml
 - JOB: intercept -g $DEVNODE | ctrl2fn | uinput -d $DEVNODE
@@ -40,8 +40,13 @@ sudo cmake --install build
       EV_KEY: [KEY_RIGHTCTRL, KEY_LEFT, KEY_RIGHT, KEY_UP, KEY_DOWN]
 ```
 
+When using the daemon, the above goes in `/etc/interception/udevmon.yaml`.
+
 ## Thanks
 The C code is based on the [space2meta](https://gitlab.com/interception/linux/plugins/space2meta) plugin by Francisco Lopes da Silva, released under MIT license.
+
+## License
+Available under MIT License, © 2021 Gilles Waeber
 
 ## Other platforms
 AutoHotkey user? This is similar to:

@@ -40,7 +40,7 @@ A suggested `udevmon` job configuration is:
       EV_KEY: [KEY_RIGHTCTRL, KEY_LEFT, KEY_RIGHT, KEY_UP, KEY_DOWN]
 ```
 
-When using the daemon, the above goes in `/etc/interception/udevmon.yaml`.
+When using the daemon, the above goes in `/etc/interception/udevmon.d/ctrl2fn.yaml`.
 
 ## Thanks
 The C code is based on the [space2meta](https://gitlab.com/interception/linux/plugins/space2meta) plugin by Francisco Lopes da Silva, released under MIT license.
